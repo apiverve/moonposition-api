@@ -1,0 +1,86 @@
+openapi: 3.0.4
+info:
+  title: Moon Position
+  description: Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/moonposition:
+    get:
+      summary: Get Moon Position Data
+      description: Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.
+      operationId: moonposition
+      parameters:
+      - name: lat
+        in: query
+        schema:
+          type: number
+        required: true
+        description: The latitude of the location
+        example: '37.7749'
+      - name: lon
+        in: query
+        schema:
+          type: number
+        required: true
+        description: The longitude of the location
+        example: '-122.4194'
+      - name: date
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The date to get the moon position data for (MM-dd-yyyy)
+        example: 12-03-2025
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  date: 02-20-2025
+                  coordinates:
+                    latitude: 37.7749
+                    longitude: -122.4194
+                  moon:
+                    altitude: -1.12892975939048
+                    azimuth: 2.0892518435834
+                    distance: 402883.102474201
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
