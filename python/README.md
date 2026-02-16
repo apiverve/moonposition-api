@@ -44,7 +44,11 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient
 # Initialize the client with your APIVerve API key
 api = MoonpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 ```
 
 ###### Simple Request
@@ -129,7 +137,11 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient, MoonpositionA
 
 api = MoonpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 
 try:
     result = api.execute(query)
@@ -150,7 +162,11 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient, MoonpositionA
 
 api = MoonpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 
 try:
     result = api.execute(query)
@@ -184,7 +200,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_moonposition.apiClient import MoonpositionAPIClient, MoonpositionAPIClientError
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 
 # Using context manager ensures proper cleanup
 with MoonpositionAPIClient("[YOUR_API_KEY]") as api:
@@ -210,7 +230,11 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient
 # Enable debug mode
 api = MoonpositionAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -225,8 +249,13 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient
 
 api = MoonpositionAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "01-16-2026"
+}
+
 try:
-    query = { "lat": 37.7749, "lon": -122.4194, "date": "01-16-2026" }
     result = api.execute(query)
     print(result)
 finally:
