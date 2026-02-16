@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/moonposition",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.",
   "main": "index.js",
   "types": "index.d.ts",
