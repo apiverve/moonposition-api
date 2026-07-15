@@ -44,6 +44,15 @@ paths:
           required: false
           description: The date to get the moon position data for (MM-dd-yyyy)
           example: 01-16-2026
+        - name: time
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            The time of day for the calculation (HH:mm format, 24-hour).
+            Defaults to 00:00 if not provided
+          example: '14:30'
       responses:
         '200':
           description: Successful Response
