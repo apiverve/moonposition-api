@@ -62,7 +62,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 var query = {
   lat: 37.7749,
   lon: -122.4194,
-  date: "01-16-2026"
+  date: "01-16-2026",
+  time: "14:30"
 };
 
 api.execute(query, function (error, data) {
@@ -84,7 +85,8 @@ You can also use promises to make requests. The API returns a promise that you c
 var query = {
   lat: 37.7749,
   lon: -122.4194,
-  date: "01-16-2026"
+  date: "01-16-2026",
+  time: "14:30"
 };
 
 api.execute(query)
@@ -107,7 +109,8 @@ async function makeRequest() {
     var query = {
   lat: 37.7749,
   lon: -122.4194,
-  date: "01-16-2026"
+  date: "01-16-2026",
+  time: "14:30"
 };
 
     try {
@@ -128,15 +131,16 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "date": "02-20-2025",
+    "date": "01-22-2026",
+    "time": "14:30",
     "coordinates": {
       "latitude": 37.7749,
       "longitude": -122.4194
     },
     "moon": {
-      "altitude": -1.12892975939048,
-      "azimuth": 2.0892518435834035,
-      "distance": 402883.10247420095
+      "altitude": -0.407908976399288,
+      "azimuth": 1.4720499058762104,
+      "distance": 404332.6834067969
     }
   }
 }
