@@ -14,18 +14,24 @@ namespace APIVerve.API.MoonPosition
         /// The latitude of the location
         /// </summary>
         [JsonProperty("lat")]
-        public string Lat { get; set; }
+        public double Lat { get; set; }
 
         /// <summary>
         /// The longitude of the location
         /// </summary>
         [JsonProperty("lon")]
-        public string Lon { get; set; }
+        public double Lon { get; set; }
 
         /// <summary>
         /// The date to get the moon position data for (MM-dd-yyyy)
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
+
+        /// <summary>
+        /// The time of day for the calculation (HH:mm format, 24-hour). Defaults to 00:00 if not provided
+        /// </summary>
+        [JsonProperty("time")]
+        public string Time { get; set; }
     }
 }
