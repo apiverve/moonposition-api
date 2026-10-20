@@ -1,13 +1,13 @@
-# [Moon Position API](https://moonposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Moon Position API](https://apiverve.com/marketplace/moonposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.
+Moon Position calculates the moon&#x27;s altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.
 
 The Moon Position API provides a simple, reliable way to integrate moon position functionality into your applications. Built for developers who need production-ready moon position capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://moonposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/moonposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://moonposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/moonposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -33,7 +33,8 @@ async function callMoonPositionAPI() {
         const params = new URLSearchParams({
             lat: 37.7749,
             lon: -122.4194,
-            time: '14:30'
+            time: '14:30',
+            timezone: 'America/Los_Angeles'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/moonposition?${params}`, {
@@ -56,7 +57,7 @@ callMoonPositionAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/moonposition?lat=37.7749&lon=-122.4194&time=14%3A30" \
+curl -X GET "https://api.apiverve.com/v1/moonposition?lat=37.7749&lon=-122.4194&time=14%3A30&timezone=America%2FLos_Angeles" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -163,7 +164,7 @@ go get github.com/apiverve/moonposition-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Moon Position API](https://moonposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Moon Position API](https://apiverve.com/marketplace/moonposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/moonposition](https://docs.apiverve.com/ref/moonposition)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +194,38 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Moon Position API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "date": "01-22-2026",
+    "time": "14:30",
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "moon": {
+      "altitude": -0.407908976399288,
+      "azimuth": 1.4720499058762104,
+      "distance": 404332.6834067969
+    }
+  }
 }
 ```
 
@@ -205,7 +233,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Moon Position API](https://moonposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Moon Position API](https://apiverve.com/marketplace/moonposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

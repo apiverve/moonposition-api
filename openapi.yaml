@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Moon Position
   description: >-
-    Moon Position is a simple tool for getting moon position data. It returns
-    data such as altitude, azimuth, and distance of the moon based on the
-    location provided.
+    Moon Position calculates the moon's altitude in the sky for any latitude and
+    longitude coordinates. Provide an optional time of day to determine lunar
+    elevation; paid plans add custom dates, azimuth, and distance.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/moonposition:
     get:
-      summary: Get Moon Position Data
+      summary: Moon Position
       description: Get moon position data based on the location
       operationId: moonposition
       parameters:
@@ -53,6 +53,15 @@ paths:
             The time of day for the calculation (HH:mm format, 24-hour).
             Defaults to 00:00 if not provided
           example: '14:30'
+        - name: timezone
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            IANA timezone name the date and time are given in. Defaults to the
+            timezone of the supplied coordinates
+          example: America/Los_Angeles
       responses:
         '200':
           description: Successful Response
