@@ -1,13 +1,12 @@
-MoonPosition API
+Moon Position API
 ============
 
-Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.
+Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [MoonPosition API](https://moonposition.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MoonPosition.svg)](https://www.nuget.org/packages/APIVerve.API.MoonPosition)
+
+This is a .NET wrapper for the [Moon Position API](https://apiverve.com/marketplace/moonposition?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the moonposition API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Moon Position API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,11 +60,12 @@ class Program
         var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MoonPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         // Make the API call
         try
@@ -95,13 +95,13 @@ class Program
 
 ## Usage
 
-The MoonPosition API documentation is found here: [https://docs.apiverve.com/ref/moonposition](https://docs.apiverve.com/ref/moonposition?utm_source=nuget&utm_medium=readme).
+The Moon Position API documentation is found here: [https://docs.apiverve.com/ref/moonposition](https://docs.apiverve.com/ref/moonposition?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-MoonPosition API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Moon Position API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -128,11 +128,12 @@ public class Example
         var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MoonPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -163,11 +164,12 @@ public class Example
         var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MoonPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -203,11 +205,12 @@ public class Example
         var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MoonPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         try
         {
@@ -262,11 +265,12 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new MoonPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         try
         {
@@ -309,7 +313,8 @@ var queryOptions = new MoonPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -338,7 +343,8 @@ var queryOptions = new MoonPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -359,7 +365,8 @@ var queryOptions = new MoonPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -374,7 +381,8 @@ var queryOptions = new MoonPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 using (var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]"))
@@ -413,7 +421,7 @@ using (var apiClient = new MoonPositionAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -424,12 +432,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

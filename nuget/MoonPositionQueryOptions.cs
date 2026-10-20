@@ -33,5 +33,11 @@ namespace APIVerve.API.MoonPosition
         /// </summary>
         [JsonProperty("time")]
         public string Time { get; set; }
+
+        /// <summary>
+        /// IANA timezone name the date and time are given in. Defaults to the timezone of the supplied coordinates
+        /// </summary>
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
     }
 }
