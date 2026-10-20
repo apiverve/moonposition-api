@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_moonposition',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.',
+    description='Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://moonposition.apiverve.com?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/moonposition?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',

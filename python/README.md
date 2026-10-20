@@ -1,13 +1,12 @@
 Moon Position API
 ============
 
-Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.
+Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Moon Position API](https://moonposition.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-moonposition.svg)](https://pypi.org/project/apiverve-moonposition/)
+
+This is a Python wrapper for the [Moon Position API](https://apiverve.com/marketplace/moonposition?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-moonposition
 
 ## Configuration
 
-Before using the moonposition API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Moon Position API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -47,7 +46,9 @@ api = MoonpositionAPIClient("[YOUR_API_KEY]")
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 try:
@@ -64,7 +65,7 @@ except Exception as e:
 
 ## Usage
 
-The Moon Position API documentation is found here: [https://docs.apiverve.com/ref/moonposition](https://docs.apiverve.com/ref/moonposition?utm_source=pypi&utm_medium=readme).
+The Moon Position API documentation is found here: [https://docs.apiverve.com/ref/moonposition](https://docs.apiverve.com/ref/moonposition?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -89,7 +90,9 @@ Using the API client, you can perform requests to the API.
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 ```
 
@@ -110,15 +113,16 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "date": "02-20-2025",
+    "date": "01-22-2026",
+    "time": "14:30",
     "coordinates": {
       "latitude": 37.7749,
       "longitude": -122.4194
     },
     "moon": {
-      "altitude": -1.12892975939048,
-      "azimuth": 2.0892518435834035,
-      "distance": 402883.10247420095
+      "altitude": -0.407908976399288,
+      "azimuth": 1.4720499058762104,
+      "distance": 404332.6834067969
     }
   }
 }
@@ -140,7 +144,9 @@ api = MoonpositionAPIClient("[YOUR_API_KEY]")
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 try:
@@ -165,7 +171,9 @@ api = MoonpositionAPIClient("[YOUR_API_KEY]")
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 try:
@@ -203,7 +211,9 @@ from apiverve_moonposition.apiClient import MoonpositionAPIClient, MoonpositionA
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 # Using context manager ensures proper cleanup
@@ -233,7 +243,9 @@ api = MoonpositionAPIClient("[YOUR_API_KEY]", debug=True)
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 # Debug information will be printed to console
@@ -252,7 +264,9 @@ api = MoonpositionAPIClient("[YOUR_API_KEY]")
 query = {
     "lat": 37.7749,
     "lon": -122.4194,
-    "date": "01-16-2026"
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles"
 }
 
 try:
@@ -267,7 +281,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -278,12 +292,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
