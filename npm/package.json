@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/moonposition",
-  "version": "1.2.0",
-  "description": "Moon Position is a simple tool for getting moon position data. It returns data such as altitude, azimuth, and distance of the moon based on the location provided.",
+  "version": "1.2.2",
+  "description": "Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "moon position", "moon position api", "moon position tool", "moon position software", "moon position service"
+    "moon position api", "moon api", "lunar position api", "moon position", "calculate moon position"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/moonposition-api/issues"
   },
-  "homepage": "https://moonposition.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/moonposition?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
