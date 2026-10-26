@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/moonposition",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance.",
   "main": "index.js",
   "types": "index.d.ts",
