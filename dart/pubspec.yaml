@@ -1,6 +1,6 @@
 name: apiverve_moonposition
 description: "Moon Position calculates the moon's altitude in the sky for any latitude and longitude coordinates. Provide an optional time of day to determine lunar elevation; paid plans add custom dates, azimuth, and distance."
-version: 1.2.5
+version: 1.2.6
 homepage: https://apiverve.com/marketplace/moonposition?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/moonposition-api/tree/main/dart
 

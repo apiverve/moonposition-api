@@ -51,7 +51,7 @@ final _formatPatterns = {
 /// Parameters:
 /// * [lat] (required) - The latitude of the location [min: -90, max: 90]
 /// * [lon] (required) - The longitude of the location [min: -180, max: 180]
-/// * [date] - The date to get the moon position data for (MM-dd-yyyy) [format: date]
+/// * [date] - The date to get the moon position data for (MM-dd-yyyy). Years 1700 to 2300 are supported [format: date]
 /// * [time] - The time of day for the calculation (HH:mm format, 24-hour). Defaults to 00:00 if not provided [format: time]
 /// * [timezone] - IANA timezone name the date and time are given in. Defaults to the timezone of the supplied coordinates [format: timezone]
 class MoonpositionClient {
