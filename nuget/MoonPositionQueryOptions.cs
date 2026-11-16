@@ -23,7 +23,7 @@ namespace APIVerve.API.MoonPosition
         public double Lon { get; set; }
 
         /// <summary>
-        /// The date to get the moon position data for (MM-dd-yyyy)
+        /// The date to get the moon position data for (MM-dd-yyyy). Years 1700 to 2300 are supported
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
